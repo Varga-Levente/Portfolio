@@ -14,7 +14,7 @@ function Footer() {
       <Row>
         <Col md="4" className="footer-copywright">
           <a
-              href={"https://in.linkedin.com/in/soumyajit4419?original_referer=https%3A%2F%2Fwww.google.com%2F"}
+              href={"https://in.linkedin.com/in/soumyajit4419"}
               style={{ color: "white", textDecoration: "none" }}
               target="_blank"
               rel="noopener noreferrer"
