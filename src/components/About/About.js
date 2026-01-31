@@ -60,7 +60,7 @@ function About() {
                   <div className="w-10 h-10 rounded-lg bg-[#7c3aed]/10 flex items-center justify-center">
                     <HiBriefcase className="text-[#7c3aed]" />
                   </div>
-                  <span>System Administrator</span>
+                  <span>Freelancer Developer & Entrepreneur</span>
                 </div>
                 <div className="flex items-center gap-3 text-[#a3a3a3]">
                   <div className="w-10 h-10 rounded-lg bg-[#f43f5e]/10 flex items-center justify-center">
@@ -72,14 +72,16 @@ function About() {
 
               <p className="text-[#a3a3a3] leading-relaxed mb-6">
                 Hi! I'm <span className="text-[#00d4ff] font-semibold">Levente Varga</span>, a passionate
-                developer who fell in love with programming. I specialize in building modern web applications
-                and creating seamless user experiences.
+                developer and entrepreneur. I'm proficient in multiple programming languages including
+                <span className="text-[#7c3aed] font-semibold"> Java, C#, Python, PHP, JavaScript</span>,
+                and I work with various frameworks in each of these ecosystems.
               </p>
 
               <p className="text-[#a3a3a3] leading-relaxed">
-                I'm fluent in <span className="text-[#7c3aed] font-semibold">Java, PHP, and Python</span>,
-                and I love working with modern frameworks like <span className="text-[#7c3aed] font-semibold">React.js and Node.js</span>.
-                My passion lies in building innovative web technologies and products.
+                Currently, I primarily work with <span className="text-[#7c3aed] font-semibold">Node.js and React</span>,
+                while also building <span className="text-[#7c3aed] font-semibold">CI/CD pipelines</span> and optimizing
+                the underlying network and server infrastructure. Security and stability are my top priorities,
+                which is why I utilize <span className="text-[#7c3aed] font-semibold">Docker and Podman</span> containerization.
               </p>
             </div>
           </motion.div>

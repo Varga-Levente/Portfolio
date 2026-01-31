@@ -60,6 +60,42 @@ function Projects() {
       gradient: "from-[#06b6d4] to-[#3b82f6]",
       icon: "📚",
     },
+    {
+      title: "Panda3D - 3D Printing Business",
+      description: "My entrepreneurial venture specializing in 3D printing services. Offering custom prints, prototyping, and various 3D printing solutions.",
+      tags: ["Business", "3D Printing", "E-commerce"],
+      ghLink: "",
+      demoLink: "https://panda3d.hu/",
+      gradient: "from-[#f97316] to-[#eab308]",
+      icon: "🐼",
+    },
+    {
+      title: "PandaSoft - Software Development",
+      description: "The software development branch of my business. Providing custom software solutions, web development, and IT consulting services.",
+      tags: ["Business", "Web Dev", "Consulting"],
+      ghLink: "",
+      demoLink: "https://pandasoft.hu/",
+      gradient: "from-[#7c3aed] to-[#ec4899]",
+      icon: "🚀",
+    },
+    {
+      title: "GateGuard - Smart Garage Opener",
+      description: "A private Android application for my custom smart garage door system. Features secure authentication and remote control capabilities.",
+      tags: ["Android", "IoT", "Java"],
+      ghLink: "",
+      demoLink: "",
+      gradient: "from-[#22c55e] to-[#84cc16]",
+      icon: "🚗",
+    },
+    {
+      title: "Catch The IMPOSTOR",
+      description: "A custom multiplayer game built with Socket.IO. Real-time gameplay with social deduction mechanics inspired by Among Us.",
+      tags: ["Socket.IO", "Node.js", "Multiplayer"],
+      ghLink: "",
+      demoLink: "",
+      gradient: "from-[#ef4444] to-[#dc2626]",
+      icon: "🎭",
+    },
   ];
 
   return (

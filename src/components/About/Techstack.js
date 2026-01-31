@@ -1,35 +1,38 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { CgCPlusPlus } from "react-icons/cg";
 import {
   DiJavascript1,
   DiReact,
   DiNodejs,
   DiPython,
-  DiGit,
   DiJava,
-  DiPhp,
-  DiNginx,
+  DiMongodb,
+  DiPostgresql,
 } from "react-icons/di";
-import { SiMariadb, SiAmazonaws, SiFlask } from "react-icons/si";
-import { TbSql, TbBrandCSharp } from "react-icons/tb";
+import {
+  SiTypescript,
+  SiMariadb,
+  SiFlask,
+  SiRedis,
+  SiSocketdotio
+} from "react-icons/si";
+import { TbBrandCSharp } from "react-icons/tb";
 
 function Techstack() {
   const skills = [
-    { icon: CgCPlusPlus, name: "C++", color: "#00599C" },
-    { icon: TbBrandCSharp, name: "C#", color: "#239120" },
-    { icon: DiJavascript1, name: "JavaScript", color: "#F7DF1E" },
-    { icon: DiNodejs, name: "Node.js", color: "#339933" },
-    { icon: DiReact, name: "React", color: "#61DAFB" },
-    { icon: DiPhp, name: "PHP", color: "#777BB4" },
-    { icon: DiJava, name: "Java", color: "#007396" },
-    { icon: DiPython, name: "Python", color: "#3776AB" },
-    { icon: SiFlask, name: "Flask", color: "#000000" },
-    { icon: TbSql, name: "SQL", color: "#4479A1" },
-    { icon: SiMariadb, name: "MariaDB", color: "#003545" },
-    { icon: DiNginx, name: "Nginx", color: "#009639" },
-    { icon: SiAmazonaws, name: "AWS", color: "#FF9900" },
-    { icon: DiGit, name: "Git", color: "#F05032" },
+    { icon: TbBrandCSharp, name: "C#" },
+    { icon: DiJava, name: "Java" },
+    { icon: DiPython, name: "Python" },
+    { icon: DiReact, name: "React" },
+    { icon: DiJavascript1, name: "JavaScript" },
+    { icon: SiTypescript, name: "TypeScript" },
+    { icon: DiNodejs, name: "Node.js" },
+    { icon: SiFlask, name: "Flask" },
+    { icon: DiMongodb, name: "MongoDB" },
+    { icon: DiPostgresql, name: "PostgreSQL" },
+    { icon: SiMariadb, name: "MariaDB" },
+    { icon: SiRedis, name: "Redis" },
+    { icon: SiSocketdotio, name: "Socket.IO" },
   ];
 
   return (

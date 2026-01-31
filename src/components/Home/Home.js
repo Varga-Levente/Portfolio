@@ -6,7 +6,6 @@ import {
   AiOutlineTwitter,
   AiFillInstagram,
 } from "react-icons/ai";
-import { HiArrowDown } from "react-icons/hi";
 import Typewriter from "typewriter-effect";
 
 function Home() {
@@ -204,22 +203,6 @@ function Home() {
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="flex flex-col items-center gap-2 text-[#a3a3a3]"
-          >
-            <span className="text-xs uppercase tracking-widest">Scroll Down</span>
-            <HiArrowDown className="text-xl" />
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );
