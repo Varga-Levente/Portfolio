@@ -1,92 +1,117 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCards";
-import Particle from "../Particle";
-import CinemAPP from "../../Assets/Projects/CinemAPP.png";
-import chart from "../../Assets/Projects/chart.png";
-import NFGym from "../../Assets/Projects/NFGym.png";
-import RoBOT from "../../Assets/Projects/RoBOT.png";
-import ChatAPP from "../../Assets/Projects/ChatAPP.png";
-import edupage from "../../Assets/Projects/edupage.png";
 
 function Projects() {
+  const projects = [
+    {
+      title: "Cinema React/Java Spring APP",
+      description: "A cinema website where you can purchase movie tickets and pre-order snacks and drinks. Offers a seamless experience with seat selection and refreshment ordering.",
+      tags: ["React", "Java Spring", "MySQL"],
+      ghLink: "https://github.com/Varga-Levente/Szoftverfejlesztes-mernokoknek",
+      demoLink: "",
+      gradient: "from-[#00d4ff] to-[#7c3aed]",
+      icon: "🎬",
+    },
+    {
+      title: "GTA:V Roleplay Gym Website",
+      description: "A website for a GTA roleplay server gym allowing employees to log sales and attendance. Owners could monitor staff performance and maintain oversight.",
+      tags: ["PHP", "MySQL", "Bootstrap"],
+      ghLink: "https://github.com/Varga-Levente/NFGym-Website",
+      demoLink: "",
+      gradient: "from-[#f43f5e] to-[#f97316]",
+      icon: "💪",
+    },
+    {
+      title: "RoBOT Android App",
+      description: "Android mobile app to control an ESP32-based robot using TCP/IP. Features dual control modes: on-screen buttons or device tilting.",
+      tags: ["Android", "Java", "ESP32"],
+      ghLink: "https://github.com/Varga-Levente/RoBOT-Controller-Android-APP",
+      ghLink2: "https://github.com/Varga-Levente/RoBOT",
+      demoLink: "",
+      gradient: "from-[#22c55e] to-[#06b6d4]",
+      icon: "🤖",
+    },
+    {
+      title: "1-Bit BMP Graph Generator",
+      description: "A C program that generates 1-bit BMP files visualizing temporal variation. Features sender/receiver modes with inter-process communication.",
+      tags: ["C", "Networking", "IPC"],
+      ghLink: "https://github.com/Varga-Levente/rendszerkozeli-programozas-projekt",
+      demoLink: "",
+      gradient: "from-[#8b5cf6] to-[#d946ef]",
+      icon: "📊",
+    },
+    {
+      title: "Real Time Chat Application",
+      description: "Real-time chat app with client, server, and Python API for user validation. Supports text and file transfers with secure authentication.",
+      tags: ["C#", "Python", "TCP/IP"],
+      ghLink: "https://github.com/Varga-Levente/Tavkozlohalo-Chat",
+      ghLink2: "https://github.com/Varga-Levente/Tavkozlohalo_API",
+      demoLink: "",
+      gradient: "from-[#eab308] to-[#f97316]",
+      icon: "💬",
+    },
+    {
+      title: "Education Page",
+      description: "A PHP website (framework-free) for tracking university courses. Contains notes, lecture presentations, and useful links for subjects.",
+      tags: ["PHP", "HTML/CSS", "JavaScript"],
+      ghLink: "",
+      demoLink: "https://edu.vlevente.me/",
+      gradient: "from-[#06b6d4] to-[#3b82f6]",
+      icon: "📚",
+    },
+  ];
+
   return (
-    <Container fluid className="project-section">
-      <Particle />
-      <Container>
-        <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
-        </h1>
-        <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
-        </p>
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={CinemAPP}
-              isBlog={false}
-              title="Cinema React/Java Spring APP"
-              description="This app is a cinema website where you can purchase movie tickets and conveniently pre-order snacks and drinks. It offers a seamless experience, allowing you to choose your seats, select your refreshments, and enjoy a hassle-free visit to the movies. Demo will be available soon."
-              ghLink="https://github.com/Varga-Levente/Szoftverfejlesztes-mernokoknek"
-              demoLink=""
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={NFGym}
-              isBlog={false}
-              title="GTA:V Roleplay Gym Website"
-              description="This website for a GTA
-roleplay server gym allowed employees to log sales and attendance, providing a streamlined system for tracking daily activities. Owners could monitor staff performance and maintain oversight, ensuring efficient management and smooth operations within the virtual fitness center. The roleplay server closed down, so the website is no longer available."
-              ghLink="https://github.com/Varga-Levente/NFGym-Website"
-              demoLink=""
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={RoBOT}
-              isBlog={false}
-              title="RoBOT Android App"
-              description="This Android mobile app controls an ESP32-based robot using TCP/IP. The app offers dual control modes: you can steer the robot with on-screen buttons or by tilting your device, providing a versatile and intuitive user experience. The first button is the repository of the app, the second is the repository of the robot."
-              ghLink="https://github.com/Varga-Levente/RoBOT-Controller-Android-APP"
-              ghLink2="https://github.com/Varga-Levente/RoBOT"
-              demoLink=""
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={chart}
-              isBlog={false}
-              title="1-Bit BMP Graph Generator"
-              description="This C program generates a 1-bit color depth BMP file visualizing the temporal variation of a randomly changing quantity. It operates in two modes: sender and receiver. In sender mode, the program generates the data, while in receiver mode, it displays the data. The program runs as a single executable but requires two processes, with inter-process communication achieved through file handling or network sockets."
-              ghLink="https://github.com/Varga-Levente/rendszerkozeli-programozas-projekt?tab=readme-ov-file"
-              demoLink=""
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={ChatAPP}
-              isBlog={false}
-              title="Real Time Chat Application C#"
-              description="This real-time chat app consists of three main components: the client, the server, and a Python API for user validation. The client connects to the server, which handles message forwarding and supports both text and file transfers. User authentication is managed by the server through the Python API, ensuring secure and efficient communication within the chat system. The first button is the repository of the client and server, the second is the API."
-              ghLink="https://github.com/Varga-Levente/Tavkozlohalo-Chat"
-              ghLink2="https://github.com/Varga-Levente/Tavkozlohalo_API"
-              demoLink=""
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={edupage}
-              isBlog={false}
-              title="Education Page"
-              description="This is a PHP website framework-free. The site is designed for tracking my university courses. Here you can find all my notes, lecture presentations, and useful links related to the subjects. "
-              ghLink=""
-              demoLink="https://edu.vlevente.me/"
-            />
-          </Col>
-        </Row>
-      </Container>
-    </Container>
+    <section className="min-h-screen py-20">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-16"
+        >
+          <span className="inline-block px-4 py-2 rounded-full bg-[#f43f5e]/10 border border-[#f43f5e]/20 text-[#f43f5e] text-sm font-medium mb-4">
+            My Portfolio
+          </span>
+          <h1
+            className="text-4xl md:text-5xl font-bold mb-4"
+            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+          >
+            Recent{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00d4ff] to-[#7c3aed]">
+              Projects
+            </span>
+          </h1>
+          <p className="text-[#a3a3a3] max-w-2xl mx-auto">
+            Here are some of the projects I've worked on. Each one represents a unique challenge and learning experience.
+          </p>
+        </motion.div>
+
+        {/* Projects Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                tags={project.tags}
+                ghLink={project.ghLink}
+                ghLink2={project.ghLink2}
+                demoLink={project.demoLink}
+                gradient={project.gradient}
+                icon={project.icon}
+              />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
