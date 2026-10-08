@@ -1,0 +1,33 @@
+{
+	"siteUrl": "https://varga-levente.com",
+	"siteName": "Levente Varga",
+	"locale": "en_US",
+	"image": {
+		"path": "/og-image.jpg",
+		"width": 1200,
+		"height": 630,
+		"alt": "Levente Varga – Software Developer"
+	},
+	"pages": [
+		{
+			"path": "/",
+			"title": "Levente Varga – Software Developer from Debrecen",
+			"description": "Portfolio of Levente Varga, freelance software developer from Debrecen, Hungary. Web apps with React and Node.js, DevOps with Docker and CI/CD."
+		},
+		{
+			"path": "/about",
+			"title": "About – Levente Varga, Software Developer",
+			"description": "About Levente Varga: IT engineering student at the University of Debrecen and freelance developer. Skills, tech stack, tools and GitHub activity."
+		},
+		{
+			"path": "/project",
+			"title": "Projects – Levente Varga, Software Developer",
+			"description": "Selected projects by Levente Varga: web applications, tools and open source work built with React, Node.js, PHP, Python and Docker."
+		},
+		{
+			"path": "/resume",
+			"title": "Resume – Levente Varga, Software Developer",
+			"description": "Resume of Levente Varga, software developer from Debrecen, Hungary. Education, experience and skills, available to view and download as PDF."
+		}
+	]
+}

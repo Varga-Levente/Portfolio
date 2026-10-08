@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Resume from "./components/Resume/ResumeNew";
 import AnimatedBackground from "./components/AnimatedBackground";
 import ScrollToTop from "./components/ScrollToTop";
+import Seo from "./components/Seo";
 import Preloader from "./components/Pre";
 import "./index.css";
 
@@ -30,6 +31,7 @@ function App() {
         <AnimatedBackground />
         <Navbar />
         <ScrollToTop />
+        <Seo />
         <AnimatePresence mode="wait">
           <main className="relative z-10 pt-20">
             <Routes>
