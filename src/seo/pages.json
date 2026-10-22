@@ -2,6 +2,19 @@
 	"siteUrl": "https://varga-levente.com",
 	"siteName": "Levente Varga",
 	"locale": "en_US",
+	"person": {
+		"name": "Levente Varga",
+		"jobTitle": "Software Developer",
+		"city": "Debrecen",
+		"country": "HU",
+		"school": "University of Debrecen",
+		"knowsAbout": ["React", "Node.js", "Java", "C#", "Python", "PHP", "Docker", "CI/CD"],
+		"sameAs": [
+			"https://github.com/Varga-Levente",
+			"https://x.com/VLevente20",
+			"https://www.instagram.com/vlevente__/"
+		]
+	},
 	"image": {
 		"path": "/og-image.jpg",
 		"width": 1200,
