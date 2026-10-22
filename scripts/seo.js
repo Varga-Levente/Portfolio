@@ -3,7 +3,7 @@
 // URLs (serve answers them with a real 404) and build/sitemap.xml.
 const fs = require("fs");
 const path = require("path");
-const { site, getMeta } = require("../src/seo/meta");
+const { site, getMeta, getJsonLd } = require("../src/seo/meta");
 
 const buildDir = path.join(__dirname, "..", "build");
 const template = fs.readFileSync(path.join(buildDir, "index.html"), "utf8");
@@ -27,6 +27,8 @@ function renderHead(pagePath) {
 		`<title data-rh="true">${escape(title)}</title>`,
 		`<link data-rh="true" rel="canonical" href="${escape(canonical)}">`,
 		...meta.map((tag) => `<meta data-rh="true" ${attrs(tag)}>`),
+		// "<" is escaped so the JSON can't close the script tag.
+		`<script data-rh="true" type="application/ld+json">${JSON.stringify(getJsonLd(pagePath)).replace(/</g, "\\u003c")}</script>`,
 	].join("");
 }
 
@@ -43,10 +45,11 @@ for (const page of site.pages) {
 // The SPA still loads here and redirects unknown routes to "/".
 fs.writeFileSync(path.join(buildDir, "404.html"), template);
 
+const today = new Date().toISOString().slice(0, 10);
 const sitemap = [
 	'<?xml version="1.0" encoding="UTF-8"?>',
 	'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-	...site.pages.map((page) => `\t<url><loc>${escape(site.siteUrl + page.path)}</loc></url>`),
+	...site.pages.map((page) => `\t<url><loc>${escape(site.siteUrl + page.path)}</loc><lastmod>${today}</lastmod></url>`),
 	"</urlset>",
 	"",
 ].join("\n");

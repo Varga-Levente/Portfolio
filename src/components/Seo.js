@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
-import { getMeta } from "../seo/meta";
+import { getMeta, getJsonLd } from "../seo/meta";
 
 function Seo() {
 	const { pathname } = useLocation();
@@ -14,6 +14,7 @@ function Seo() {
 			{meta.map((attrs) => (
 				<meta key={attrs.name || attrs.property || "itemprop:" + attrs.itemprop} {...attrs} />
 			))}
+			<script type="application/ld+json">{JSON.stringify(getJsonLd(pathname))}</script>
 		</Helmet>
 	);
 }

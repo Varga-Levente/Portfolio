@@ -37,4 +37,50 @@ function getMeta(path) {
 	};
 }
 
-module.exports = { site, getMeta };
+// schema.org data for search engines: the site, its owner and the current page.
+function getJsonLd(path) {
+	const page = getPage(path);
+	const { person } = site;
+	const personId = site.siteUrl + "/#person";
+	const websiteId = site.siteUrl + "/#website";
+
+	return {
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "Person",
+				"@id": personId,
+				name: person.name,
+				url: site.siteUrl,
+				image: site.siteUrl + site.image.path,
+				jobTitle: person.jobTitle,
+				address: {
+					"@type": "PostalAddress",
+					addressLocality: person.city,
+					addressCountry: person.country,
+				},
+				alumniOf: { "@type": "CollegeOrUniversity", name: person.school },
+				knowsAbout: person.knowsAbout,
+				sameAs: person.sameAs,
+			},
+			{
+				"@type": "WebSite",
+				"@id": websiteId,
+				url: site.siteUrl,
+				name: site.siteName,
+				inLanguage: "en",
+				publisher: { "@id": personId },
+			},
+			{
+				"@type": page.path === "/about" ? "ProfilePage" : "WebPage",
+				url: site.siteUrl + page.path,
+				name: page.title,
+				description: page.description,
+				isPartOf: { "@id": websiteId },
+				about: { "@id": personId },
+			},
+		],
+	};
+}
+
+module.exports = { site, getMeta, getJsonLd };
