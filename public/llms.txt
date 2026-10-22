@@ -1,0 +1,29 @@
+# Levente Varga
+
+> Portfolio of Levente Varga, freelance software developer and entrepreneur from Debrecen, Hungary. IT engineering student at the University of Debrecen. Works mainly with Node.js and React, builds CI/CD pipelines and runs containerized infrastructure with Docker and Podman.
+
+Languages: Java, C#, Python, PHP, JavaScript. Security and stability are top priorities.
+
+## Pages
+
+- [Home](https://varga-levente.com/): Introduction and social links
+- [About](https://varga-levente.com/about): Background, skills, tech stack, tools and GitHub activity
+- [Projects](https://varga-levente.com/project): Selected projects with source code and demo links
+- [Resume](https://varga-levente.com/resume): Education, experience and skills, downloadable as PDF
+
+## Projects
+
+- [Cinema React/Java Spring App](https://github.com/Varga-Levente/Szoftverfejlesztes-mernokoknek): Movie ticket and snack ordering site with seat selection (React, Java Spring, MySQL)
+- [GTA:V Roleplay Gym Website](https://github.com/Varga-Levente/NFGym-Website): Sales and attendance logging for a roleplay server gym (PHP, MySQL, Bootstrap)
+- [RoBOT Android App](https://github.com/Varga-Levente/RoBOT-Controller-Android-APP): Android app controlling an ESP32 robot over TCP/IP (Android, Java, ESP32)
+- [1-Bit BMP Graph Generator](https://github.com/Varga-Levente/rendszerkozeli-programozas-projekt): C program generating 1-bit BMP graphs with IPC (C, Networking)
+- [Real Time Chat Application](https://github.com/Varga-Levente/Tavkozlohalo-Chat): Chat client, server and Python validation API with file transfer (C#, Python, TCP/IP)
+- [Education Page](https://edu.vlevente.me/): Framework-free PHP site with university course notes
+- [Panda3D](https://panda3d.hu/): 3D printing business: custom prints and prototyping
+- [PandaSoft](https://pandasoft.hu/): Software development business: custom software, web development, IT consulting
+
+## Contact
+
+- [GitHub](https://github.com/Varga-Levente)
+- [X (Twitter)](https://x.com/VLevente20)
+- [Instagram](https://www.instagram.com/vlevente__/)
