@@ -2,7 +2,9 @@
 # https://nixpacks.com/docs/configuration/file
 
 [phases.setup]
-nixPkgs = ["nodejs_20"]
+# Node.js 24.22.1+ fixes Node2Shell (CVE-2026-111497); pinned nixos-26.05 commit ships 24.22.1
+nixPkgs = ["nodejs_24"]
+nixpkgsArchive = "08d3a97586f6b6343b3b5e799980773629432610"
 
 [phases.install]
 cmds = ["npm ci --legacy-peer-deps"]
