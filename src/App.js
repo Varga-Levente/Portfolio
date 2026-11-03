@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import Seo from "./components/Seo";
 import Preloader from "./components/Pre";
+import NotFound from "./components/NotFound";
 
 function App() {
 	const [loading, setLoading] = useState(true);
@@ -24,7 +25,8 @@ function App() {
 					<Route path="/" element={<Home />} />
 					<Route path="/project" element={<Projects />} />
 					<Route path="/about" element={<About />} />
-					<Route path="*" element={<Navigate to="/" />} />
+					<Route path="/resume" element={<Navigate to="/" replace />} />
+					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</main>
 			<Footer />

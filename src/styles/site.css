@@ -150,3 +150,14 @@ h1, h2, h3, p { margin: 0; }
 
 .not-sent { color: var(--crimson-text); }
 .project-links .vl-link svg { width: 16px; height: 16px; }
+
+/* 404: outlined code with a filled crimson zero, copy below */
+.notfound { min-height: calc(100vh - 160px); display: grid; align-content: center; gap: var(--space-5); padding-block: var(--space-9); overflow: hidden; text-align: center; }
+.notfound__code { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: clamp(140px, 34vw, 420px); line-height: .8; color: transparent; -webkit-text-stroke: 2px var(--crimson); user-select: none; }
+.notfound__code span { color: var(--crimson); }
+.notfound__body { display: grid; justify-items: center; gap: var(--space-4); margin-top: var(--space-4); }
+.notfound__body h1 { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: clamp(40px, 6vw, 72px); line-height: .95; text-transform: uppercase; }
+.notfound__body h1 span { color: var(--crimson); }
+.notfound__body p { margin: 0; color: var(--ink-muted); max-width: 52ch; }
+.notfound__body code { color: var(--crimson-text); text-transform: none; word-break: break-all; }
+.notfound__body .vl-row { justify-content: center; }
