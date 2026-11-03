@@ -128,10 +128,10 @@ textarea.vl-input { min-height: 110px; resize: vertical; }
 /* Timeline arrows: halfway between two stations, pointing up to the newer one */
 .vl-tl:not(:last-child)::after { content: ""; position: absolute; left: 3px; top: calc(50% + var(--space-6) / 2 + 6px); width: 8px; height: 8px; border-left: 2px solid var(--crimson); border-top: 2px solid var(--crimson); transform: rotate(45deg); }
 .vl-timeline--split .vl-tl::after { display: none; }
-/* Last station: the line runs on, dashed, to show there was more before */
-.vl-tl--more { color: var(--ink-muted); }
-.vl-tl--more::before { border-style: dashed; border-color: var(--line-strong); }
-.vl-timeline:has(.vl-tl--more)::before { bottom: 0; background: linear-gradient(var(--crimson), var(--line) 80%, transparent); }
+/* Below the last station the line fades into three dots: there was more before */
+.vl-timeline--more { padding-bottom: 44px; }
+.vl-timeline--more::before { bottom: 44px; }
+.vl-timeline--more::after { content: ""; position: absolute; left: 6px; bottom: 4px; width: 3px; height: 30px; background: radial-gradient(circle, var(--ink-muted) 1.5px, transparent 2px) center top / 3px 10px repeat-y; }
 
 /* Loader: crimson fill rises through the outlined mark, then the curtain lifts */
 .vl-loader { position: fixed; inset: 0; z-index: 100; background: var(--bg); color: var(--ink); display: grid; place-items: center; font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; transition: transform .45s cubic-bezier(.7, 0, .3, 1); }
@@ -151,3 +151,20 @@ textarea.vl-input { min-height: 110px; resize: vertical; }
 .vl-loader.is-leaving { transform: translateY(-100%); transition-delay: .3s; }
 .vl-loader.is-leaving::before { transform: translateY(0); }
 @media (prefers-reduced-motion: reduce) { .vl-loader, .vl-loader::before { transition: opacity .3s; } .vl-loader.is-leaving { transform: none; opacity: 0; } .vl-loader.is-leaving::before { transform: translateY(100%); } }
+
+/* Tech marquee: small icon + name cards scrolling in an endless loop, paused on hover */
+.vl-marquee { position: relative; overflow: hidden; max-width: 100%; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+.vl-marquee__track { display: flex; width: max-content; gap: var(--space-2); animation: vl-marquee var(--marquee-duration, 40s) linear infinite; }
+.vl-marquee:hover .vl-marquee__track, .vl-marquee:focus-within .vl-marquee__track { animation-play-state: paused; }
+.vl-marquee__group { display: flex; gap: var(--space-2); }
+.vl-chip { display: inline-flex; align-items: center; gap: var(--space-2); height: 36px; padding: 0 var(--space-3); border: 1px solid var(--line-strong); border-radius: var(--radius-md); background: var(--surface); color: var(--ink); font-family: var(--font-mono); font-size: 12px; letter-spacing: .04em; white-space: nowrap; transition: border-color .2s; }
+.vl-chip svg { width: 16px; height: 16px; flex: none; color: var(--crimson-text); }
+.vl-chip:hover { border-color: var(--crimson); }
+@keyframes vl-marquee { to { transform: translateX(calc(-50% - var(--space-2) / 2)); } }
+@media (prefers-reduced-motion: reduce) {
+	.vl-marquee { -webkit-mask-image: none; mask-image: none; }
+	.vl-marquee__track { animation: none; width: auto; }
+	.vl-marquee__group { flex-wrap: wrap; }
+	.vl-marquee__group + .vl-marquee__group { display: none; }
+}
+.vl-marquee__group { list-style: none; margin: 0; padding: 0; }
