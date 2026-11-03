@@ -14,7 +14,7 @@ A varga-levente.com design rendszere. Merész, szögletes, piros a feketén: ké
 - **Szín:** a sötét téma az elsődleges, a világos egyenrangú párja. Alapértelmezés a rendszer beállítása, a toggle felülírja. A `crimson` kitöltésre és óriás szövegre való; kis piros szöveg mindig `crimson-text`. Szöveg crimson felületen: `on-crimson`.
 - **Tipográfia:** Anton (display, csupa nagybetű), Archivo (szöveg), JetBrains Mono (címkék, nav, gombok, számozás). Az óriás háttérszó (`display-xl`) oldalanként egyszer.
 - **Forma:** a rendszer szögletes (`radius-none`) képeknél és paneleknél. `radius-sm` gombokon, tageken, inputokon; `radius-md` csak a szolgáltatás-kártyán, űrlap-panelen, stat-kártyán és tech ikonon; `radius-full` ikon-körökön.
-- **Vonalak, nem árnyék:** elválasztás `line` hajszálvonallal. Egyetlen árnyék a `shadow-glow` a hero portré mögött, egy crimson fénygyűrűvel együtt.
+- **Vonalak, nem árnyék:** elválasztás `line` hajszálvonallal. Egyetlen árnyék a `shadow-glow` a hero portré mögött, egy crimson fénygyűrűvel együtt (lásd Fotó).
 - **Számozás:** `01 02 03` csak ahol a sorrend valódi (kiemelt projektek sorrendje, munkafolyamat lépései).
 - **Mozgás:** visszafogott. Nyilak 3–4px-et csúsznak hoverre, kártyák 2px-et emelkednek. `prefers-reduced-motion` mellett nincs mozgás.
 
@@ -23,6 +23,10 @@ A varga-levente.com design rendszere. Merész, szögletes, piros a feketén: ké
 Max szélesség 1200px, oldalsó margó min. 16px. Szekciók közt `space-9` (mobilon `space-8`). Szekció-fejléc: cím + hajszálvonal + opcionális link (`SectionHeader`).
 
 Főoldal sorrend: Hero (háttérszó, név, stat-kártya, tech ikonsor) → Kiemelt projektek → Szolgáltatások → Tapasztalat és tanulmányok (idővonal) + Munkafolyamat + Idézet panel → Kontakt (elérhetőségek + űrlap) → Footer.
+
+## Fotó
+
+A portré piros duotone kezelést kap: fekete-fehér (`grayscale(1) contrast(1.2) brightness(1.1)`), rajta `crimson` → `crimson-deep` átmenet `mix-blend-mode: multiply`-jal, 85%-on. Kör alakú kivágás (`radius-full`), körülötte 2px crimson fénygyűrű (`shadow-glow`). Így bármilyen fotó illeszkedik mindkét témához.
 
 ## Ikonok
 
