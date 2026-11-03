@@ -33,6 +33,7 @@ import {
 } from "react-icons/si";
 import { TbBrandCSharp } from "react-icons/tb";
 import { FiMonitor, FiServer, FiBox, FiSmartphone } from "react-icons/fi";
+import { ClaudeLogo } from "../components/Icons";
 
 export const contactEmail = "hello@varga-levente.com";
 
@@ -52,6 +53,12 @@ export const heroTech = [
 	{ name: "Python", icon: SiPython },
 	{ name: "Docker", icon: SiDocker },
 	{ name: "Kubernetes", icon: SiKubernetes },
+	{ name: "PostgreSQL", icon: SiPostgresql },
+	{ name: "MongoDB", icon: SiMongodb },
+	{ name: "Redis", icon: SiRedis },
+	{ name: "Socket.IO", icon: SiSocketdotio },
+	{ name: "Git", icon: SiGit },
+	{ name: "Claude", icon: ClaudeLogo },
 ];
 
 export const techStack = [
@@ -83,6 +90,7 @@ export const toolStack = [
 	{ name: "AWS", icon: SiAmazonaws },
 	{ name: "Nginx", icon: SiNginx },
 	{ name: "Git", icon: SiGit },
+	{ name: "Claude", icon: ClaudeLogo },
 	{ name: "Ubuntu", icon: SiUbuntu },
 	{ name: "Windows 11", icon: SiWindows11 },
 	{ name: "JetBrains", icon: SiJetbrains },
