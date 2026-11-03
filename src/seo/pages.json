@@ -49,11 +49,6 @@
 			"path": "/project",
 			"title": "Projects – Levente Varga, Software Developer",
 			"description": "Projects by Levente Varga: PandaSoft, Panda3D, the Dotrix Discord bot, and web, mobile and IoT apps built with React, Node.js, Java, C# and Python."
-		},
-		{
-			"path": "/resume",
-			"title": "Resume – Levente Varga, Software Developer",
-			"description": "Resume of Levente Varga, software developer from Debrecen, Hungary. Education, experience and skills, available to view and download as PDF."
 		}
 	]
 }

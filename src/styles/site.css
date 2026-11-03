@@ -144,9 +144,8 @@ h1, h2, h3, p { margin: 0; }
 .tech-item svg { width: 20px; height: 20px; flex: none; color: var(--crimson-text); }
 
 .calendar { padding: var(--space-5); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); overflow-x: auto; color: var(--ink-muted); }
+.calendar > * { width: max-content; max-width: none; margin-inline: auto; }
 
-.resume-doc { display: flex; justify-content: center; padding: var(--space-5); background: var(--surface); border: 1px solid var(--line); overflow-x: auto; }
-.resume-doc canvas { max-width: 100%; height: auto !important; }
 .notice { padding: var(--space-3) var(--space-4); border: 1px solid var(--crimson); color: var(--crimson-text); justify-self: start; }
 
 .not-sent { color: var(--crimson-text); }

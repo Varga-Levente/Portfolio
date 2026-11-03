@@ -16,14 +16,6 @@ export function Arrow() {
 	);
 }
 
-export function Download() {
-	return (
-		<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-			<path d="M8 2v9M4 7l4 4 4-4M2 14h12" />
-		</svg>
-	);
-}
-
 export function XLogo() {
 	return (
 		<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

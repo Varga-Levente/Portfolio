@@ -30,6 +30,7 @@ import {
 	SiDiscord,
 	SiAdobephotoshop,
 	SiWindows11,
+	SiApple,
 } from "react-icons/si";
 import { TbBrandCSharp } from "react-icons/tb";
 import { FiMonitor, FiServer, FiBox, FiSmartphone } from "react-icons/fi";
@@ -93,6 +94,7 @@ export const toolStack = [
 	{ name: "Claude", icon: ClaudeLogo },
 	{ name: "Ubuntu", icon: SiUbuntu },
 	{ name: "Windows 11", icon: SiWindows11 },
+	{ name: "macOS", icon: SiApple },
 	{ name: "JetBrains", icon: SiJetbrains },
 	{ name: "Postman", icon: SiPostman },
 	{ name: "Discord", icon: SiDiscord },
