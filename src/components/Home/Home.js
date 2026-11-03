@@ -141,10 +141,10 @@ function Experience() {
 						<h2>Experience &amp; education</h2>
 						<ol className="vl-timeline">
 							{experience.map((item) => (
-								<li key={item.title} className="vl-tl">
+								<li key={item.title || item.when} className={item.more ? "vl-tl vl-tl--more" : "vl-tl"}>
 									<span className="vl-label vl-tl__when">{item.when}</span>
-									<h3>{item.title}</h3>
-									<b>{item.org}</b>
+									{item.title && <h3>{item.title}</h3>}
+									{item.org && <b>{item.org}</b>}
 									<p>{item.text}</p>
 								</li>
 							))}

@@ -125,9 +125,13 @@ textarea.vl-input { min-height: 110px; resize: vertical; }
 .vl-tech:hover .vl-tech__name, .vl-tech:focus-visible .vl-tech__name { opacity: 1; transform: translate(-50%, 0); }
 @media (prefers-reduced-motion: reduce) { .vl-tech__name { transition: none; } }
 
-/* Timeline arrows: point up, from the older item to the newer one */
-.vl-tl + .vl-tl::after { content: ""; position: absolute; left: 3px; top: calc(-1 * var(--space-6) / 2 - 3px); width: 8px; height: 8px; border-left: 2px solid var(--crimson); border-top: 2px solid var(--crimson); transform: rotate(45deg); }
-.vl-timeline--split .vl-tl + .vl-tl::after { display: none; }
+/* Timeline arrows: halfway between two stations, pointing up to the newer one */
+.vl-tl:not(:last-child)::after { content: ""; position: absolute; left: 3px; top: calc(50% + var(--space-6) / 2 + 6px); width: 8px; height: 8px; border-left: 2px solid var(--crimson); border-top: 2px solid var(--crimson); transform: rotate(45deg); }
+.vl-timeline--split .vl-tl::after { display: none; }
+/* Last station: the line runs on, dashed, to show there was more before */
+.vl-tl--more { color: var(--ink-muted); }
+.vl-tl--more::before { border-style: dashed; border-color: var(--line-strong); }
+.vl-timeline:has(.vl-tl--more)::before { bottom: 0; background: linear-gradient(var(--crimson), var(--line) 80%, transparent); }
 
 /* Loader: crimson fill rises through the outlined mark, then the curtain lifts */
 .vl-loader { position: fixed; inset: 0; z-index: 100; background: var(--bg); color: var(--ink); display: grid; place-items: center; font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; transition: transform .45s cubic-bezier(.7, 0, .3, 1); }

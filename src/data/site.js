@@ -120,6 +120,7 @@ export const experience = [
 	{ when: "Now", title: "IT engineering student", org: "University of Debrecen", text: "Faculty of Informatics." },
 	{ when: "Past", title: ".NET developer, R&D", org: "National Instruments (Emerson)", text: "Research and development on .NET." },
 	{ when: "Past", title: "PHP backend developer", org: "PQRS Kft.", text: "Backend development in PHP." },
+	{ when: "Earlier", more: true, text: "More projects and jobs along the way." },
 ];
 
 export const process = [
