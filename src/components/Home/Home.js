@@ -28,13 +28,16 @@ function Hero() {
 					</div>
 					<div className="hero__tech">
 						<span className="vl-label">Tech I work with</span>
-						<div className="vl-techrow">
-							{heroTech.map(({ name, icon: Icon }) => (
-								<span key={name} className="vl-tech" tabIndex="0" aria-label={name}>
-									<Icon aria-hidden="true" />
-									<span className="vl-tech__name" aria-hidden="true">{name}</span>
-								</span>
-							))}
+						<div className="vl-marquee">
+							<div className="vl-marquee__track">
+								{[0, 1].map((copy) => (
+									<ul key={copy} className="vl-marquee__group" aria-hidden={copy === 1 ? "true" : undefined}>
+										{heroTech.map(({ name, icon: Icon }) => (
+											<li key={name} className="vl-chip"><Icon aria-hidden="true" />{name}</li>
+										))}
+									</ul>
+								))}
+							</div>
 						</div>
 					</div>
 				</div>
@@ -139,12 +142,12 @@ function Experience() {
 				<div className="trio">
 					<div>
 						<h2>Experience &amp; education</h2>
-						<ol className="vl-timeline">
+						<ol className="vl-timeline vl-timeline--more">
 							{experience.map((item) => (
-								<li key={item.title || item.when} className={item.more ? "vl-tl vl-tl--more" : "vl-tl"}>
+								<li key={item.title} className="vl-tl">
 									<span className="vl-label vl-tl__when">{item.when}</span>
-									{item.title && <h3>{item.title}</h3>}
-									{item.org && <b>{item.org}</b>}
+									<h3>{item.title}</h3>
+									<b>{item.org}</b>
 									<p>{item.text}</p>
 								</li>
 							))}
