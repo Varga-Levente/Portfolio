@@ -44,4 +44,4 @@ Tailwind-hez a tokenek a `tailwind.config.js` `theme.extend` alá mennek CSS vá
 - `components/bundle.css` és `components/*/`: komponens-stílusok, előnézetek, irányelvek.
 - `mockup.html`: a főoldal látványterve (böngészőben megnyitható; az élő oldalt nem érinti).
 - `mockup-mono.html`: alternatív, fekete-fehér minimál látványterv (önálló, nem a VL Crimson tokeneket használja).
-- Élő változat: https://claude.ai/artifact/CGoY8ZWMCagKN2cosRjstv (design system), https://claude.ai/artifact/6ZzySYBgGkgQNzy5v3kdXM (látványterv), https://claude.ai/artifact/MnJF8yNHWYFdj673wmWz54 (monokróm látványterv).
+- Élő változat: https://claude.ai/artifact/CGoY8ZWMCagKN2cosRjstv (design system), https://claude.ai/artifact/6ZzySYBgGkgQNzy5v3kdXM (látványterv), https://claude.ai/artifact/MnJF8yNHWYFdj673wmWz54 (monokróm látványterv)., https://claude.ai/artifact/MYQiY3WzAQPQEGfFany4bN (loader canvas).

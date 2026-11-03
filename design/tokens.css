@@ -1,4 +1,4 @@
-/* VL Crimson tokens: dark by default via system preference, toggle sets data-theme */
+/* VL Crimson tokens (design/tokens.json). Light by default, dark via system preference or data-theme. */
 :root {
 	--bg: #f7f4f3;
 	--surface: #ffffff;

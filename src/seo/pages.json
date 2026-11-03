@@ -4,11 +4,24 @@
 	"locale": "en_US",
 	"person": {
 		"name": "Levente Varga",
-		"jobTitle": "Software Developer",
+		"jobTitle": "Full Stack Developer",
 		"city": "Debrecen",
 		"country": "HU",
 		"school": "University of Debrecen",
-		"knowsAbout": ["React", "Node.js", "Java", "C#", "Python", "PHP", "Docker", "CI/CD"],
+		"knowsAbout": [
+			"React",
+			"Next.js",
+			"Node.js",
+			"TypeScript",
+			".NET",
+			"Java",
+			"C#",
+			"Python",
+			"PHP",
+			"Docker",
+			"Kubernetes",
+			"CI/CD"
+		],
 		"sameAs": [
 			"https://github.com/Varga-Levente",
 			"https://x.com/VLevente20",
@@ -19,23 +32,23 @@
 		"path": "/og-image.jpg",
 		"width": 1200,
 		"height": 630,
-		"alt": "Levente Varga – Software Developer"
+		"alt": "Levente Varga – Full stack developer & entrepreneur from Debrecen"
 	},
 	"pages": [
 		{
 			"path": "/",
-			"title": "Levente Varga – Software Developer from Debrecen",
-			"description": "Portfolio of Levente Varga, freelance software developer from Debrecen, Hungary. Web apps with React and Node.js, DevOps with Docker and CI/CD."
+			"title": "Levente Varga – Full Stack Developer from Debrecen",
+			"description": "Full stack developer and founder of PandaSoft, Panda3D and Dotrix. Web apps with React, Next.js and Node.js, shipped in containers with Docker and Kubernetes."
 		},
 		{
 			"path": "/about",
 			"title": "About – Levente Varga, Software Developer",
-			"description": "About Levente Varga: IT engineering student at the University of Debrecen and freelance developer. Skills, tech stack, tools and GitHub activity."
+			"description": "About Levente Varga: full stack developer from Debrecen, IT engineering student at the University of Debrecen, formerly at National Instruments (Emerson) and PQRS Kft."
 		},
 		{
 			"path": "/project",
 			"title": "Projects – Levente Varga, Software Developer",
-			"description": "Selected projects by Levente Varga: web applications, tools and open source work built with React, Node.js, PHP, Python and Docker."
+			"description": "Projects by Levente Varga: PandaSoft, Panda3D, the Dotrix Discord bot, and web, mobile and IoT apps built with React, Node.js, Java, C# and Python."
 		},
 		{
 			"path": "/resume",

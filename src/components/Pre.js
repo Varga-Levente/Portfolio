@@ -1,62 +1,65 @@
-import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
 
-function Pre({ load }) {
-  return (
-    <AnimatePresence>
-      {load && (
-        <motion.div
-          initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#262626]"
-        >
-          <div className="flex flex-col items-center gap-6">
-            {/* Logo Animation */}
-            <motion.div
-              animate={{
-                scale: [1, 1.1, 1],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="text-4xl font-bold"
-              style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-            >
-              <span className="text-[#00d4ff]">&lt;</span>
-              <span className="text-white">VL</span>
-              <span className="text-[#00d4ff]">/&gt;</span>
-            </motion.div>
+const DURATION = 1400;
 
-            {/* Loading Bar */}
-            <div className="w-48 h-1 bg-white/10 rounded-full overflow-hidden">
-              <motion.div
-                initial={{ x: "-100%" }}
-                animate={{ x: "100%" }}
-                transition={{
-                  duration: 1,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-                className="h-full w-1/2 bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] rounded-full"
-              />
-            </div>
+// Crimson fill with a moving wave rises through the outlined mark, then the curtain lifts.
+function Pre({ onDone }) {
+	const ref = useRef(null);
+	const [pct, setPct] = useState(0);
+	const [stage, setStage] = useState("loading");
 
-            {/* Loading Text */}
-            <motion.p
-              animate={{ opacity: [0.5, 1, 0.5] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="text-[#a3a3a3] text-sm"
-            >
-              Loading...
-            </motion.p>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
+	useEffect(() => {
+		const el = ref.current;
+		const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+		const duration = reduce ? 1 : DURATION;
+		const start = performance.now();
+		const timers = [];
+		let frame;
+
+		function tick(now) {
+			const k = Math.min(1, (now - start) / duration);
+			const eased = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+			const value = Math.round(eased * 100);
+			el.style.setProperty("--p", value + "%");
+			el.style.setProperty("--k", eased);
+			el.style.setProperty("--wx", -(now - start) * 0.12 + "px");
+			setPct(value);
+			if (k < 1) {
+				frame = requestAnimationFrame(tick);
+				return;
+			}
+			setStage("ready");
+			timers.push(setTimeout(() => setStage("leaving"), 150));
+			timers.push(setTimeout(onDone, 1000));
+		}
+
+		frame = requestAnimationFrame(tick);
+		return () => {
+			cancelAnimationFrame(frame);
+			timers.forEach(clearTimeout);
+		};
+	}, [onDone]);
+
+	const className = "vl-loader" + (stage !== "loading" ? " is-ready" : "") + (stage === "leaving" ? " is-leaving" : "");
+
+	return (
+		<div ref={ref} className={className} role="status" aria-label="Loading">
+			<div className="vl-loader__corners vl-label" aria-hidden="true">
+				<div><span className="vl-eyebrow">{"// software developer"}</span><span>Debrecen, HU</span></div>
+				<div><span>Levente Varga</span><span>varga-levente.com</span></div>
+			</div>
+			<div className="vl-loader__center">
+				<div className="vl-loader__mark" aria-hidden="true">VL.<span>VL.</span></div>
+				<div className="vl-loader__bar">
+					<div>
+						<span>{stage === "loading" ? "// loading portfolio" : "// ready"}</span>
+						<span>{String(pct).padStart(3, "0")}%</span>
+					</div>
+					<div className="vl-loader__track"><i /></div>
+				</div>
+			</div>
+		</div>
+	);
 }
 
 export default Pre;

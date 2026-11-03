@@ -116,11 +116,34 @@
 textarea.vl-input { min-height: 110px; resize: vertical; }
 
 /* Tech icon row: brand icons, name appears below on hover or focus */
-.vl-techrow { display: flex; flex-wrap: wrap; gap: 30px var(--space-2); padding-bottom: 28px; }
-.vl-tech { position: relative; width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--line-strong); border-radius: var(--radius-md); color: var(--ink-muted); transition: color .2s, border-color .2s, background .2s; outline: none; }
-.vl-tech svg { width: 20px; height: 20px; }
+.vl-techrow { display: flex; flex-wrap: wrap; gap: 30px 6px; padding-bottom: 28px; }
+.vl-tech { position: relative; width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid var(--line-strong); border-radius: var(--radius-md); color: var(--ink-muted); transition: color .2s, border-color .2s, background .2s; outline: none; }
+.vl-tech svg { width: 18px; height: 18px; }
 .vl-tech__name { position: absolute; top: calc(100% + 8px); left: 50%; transform: translate(-50%, -4px); white-space: nowrap; font-family: var(--font-mono); font-size: 11px; line-height: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--crimson-text); opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; }
 .vl-tech:hover, .vl-tech:focus-visible { color: var(--ink); border-color: var(--crimson); background: var(--surface-raised); }
 .vl-tech:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
 .vl-tech:hover .vl-tech__name, .vl-tech:focus-visible .vl-tech__name { opacity: 1; transform: translate(-50%, 0); }
 @media (prefers-reduced-motion: reduce) { .vl-tech__name { transition: none; } }
+
+/* Timeline arrows: point up, from the older item to the newer one */
+.vl-tl + .vl-tl::after { content: ""; position: absolute; left: 3px; top: calc(-1 * var(--space-6) / 2 - 3px); width: 8px; height: 8px; border-left: 2px solid var(--crimson); border-top: 2px solid var(--crimson); transform: rotate(45deg); }
+.vl-timeline--split .vl-tl + .vl-tl::after { display: none; }
+
+/* Loader: crimson fill rises through the outlined mark, then the curtain lifts */
+.vl-loader { position: fixed; inset: 0; z-index: 100; background: var(--bg); color: var(--ink); display: grid; place-items: center; font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; transition: transform .45s cubic-bezier(.7, 0, .3, 1); }
+.vl-loader::before { content: ""; position: absolute; inset: 0; background: var(--crimson); transform: translateY(100%); transition: transform .35s cubic-bezier(.7, 0, .3, 1); }
+.vl-loader__corners { position: absolute; inset: max(24px, env(safe-area-inset-top, 0px)) max(20px, env(safe-area-inset-right, 0px)) max(24px, env(safe-area-inset-bottom, 0px)) max(20px, env(safe-area-inset-left, 0px)); display: flex; flex-direction: column; justify-content: space-between; pointer-events: none; color: var(--ink-muted); }
+.vl-loader__corners div { display: flex; justify-content: space-between; gap: 16px; }
+.vl-loader__corners .vl-eyebrow { color: var(--crimson-text); }
+.vl-loader__center { position: relative; display: grid; justify-items: center; gap: 32px; }
+.vl-loader__mark { position: relative; font-family: var(--font-display); font-size: clamp(140px, 22vw, 220px); line-height: .85; letter-spacing: 0; text-transform: none; color: transparent; -webkit-text-stroke: 1.5px var(--line-strong); }
+.vl-loader__mark span { position: absolute; inset: 0; color: var(--crimson); -webkit-text-stroke: 0; -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 14' preserveAspectRatio='none'%3E%3Cpath d='M0 7 C10 0 20 0 30 7 S50 14 60 7 V14 H0 Z'/%3E%3C/svg%3E"), linear-gradient(#000, #000); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 14' preserveAspectRatio='none'%3E%3Cpath d='M0 7 C10 0 20 0 30 7 S50 14 60 7 V14 H0 Z'/%3E%3C/svg%3E"), linear-gradient(#000, #000); -webkit-mask-repeat: repeat-x, no-repeat; mask-repeat: repeat-x, no-repeat; -webkit-mask-size: 60px 14px, 100% calc(var(--k, 0) * .85em); mask-size: 60px 14px, 100% calc(var(--k, 0) * .85em); -webkit-mask-position: left var(--wx, 0px) bottom calc(var(--k, 0) * .85em - 1px), left 0 bottom 0; mask-position: left var(--wx, 0px) bottom calc(var(--k, 0) * .85em - 1px), left 0 bottom 0; }
+.vl-loader__bar { width: min(300px, 70vw); display: grid; gap: 10px; }
+.vl-loader__bar div { display: flex; justify-content: space-between; }
+.vl-loader__bar div span:first-child { color: var(--ink-muted); }
+.vl-loader__track { height: 2px; background: var(--line); }
+.vl-loader__track i { display: block; height: 2px; width: var(--p, 0%); background: var(--crimson); }
+.vl-loader.is-ready .vl-loader__bar div span:first-child { color: var(--crimson-text); }
+.vl-loader.is-leaving { transform: translateY(-100%); transition-delay: .3s; }
+.vl-loader.is-leaving::before { transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) { .vl-loader, .vl-loader::before { transition: opacity .3s; } .vl-loader.is-leaving { transform: none; opacity: 0; } .vl-loader.is-leaving::before { transform: translateY(100%); } }
