@@ -115,7 +115,12 @@
 .vl-input:focus { outline: 2px solid var(--focus-ring); outline-offset: 1px; border-color: transparent; }
 textarea.vl-input { min-height: 110px; resize: vertical; }
 
-/* Tech icon row */
-.vl-techrow { display: flex; flex-wrap: wrap; gap: var(--space-2); }
-.vl-tech { width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid var(--line-strong); border-radius: var(--radius-md); color: var(--ink-muted); font-family: var(--font-mono); font-size: 11px; font-weight: 500; transition: color .2s, border-color .2s; }
-.vl-tech:hover { color: var(--crimson-text); border-color: var(--crimson); }
+/* Tech icon row: brand icons, name appears below on hover or focus */
+.vl-techrow { display: flex; flex-wrap: wrap; gap: 30px var(--space-2); padding-bottom: 28px; }
+.vl-tech { position: relative; width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--line-strong); border-radius: var(--radius-md); color: var(--ink-muted); transition: color .2s, border-color .2s, background .2s; outline: none; }
+.vl-tech svg { width: 20px; height: 20px; }
+.vl-tech__name { position: absolute; top: calc(100% + 8px); left: 50%; transform: translate(-50%, -4px); white-space: nowrap; font-family: var(--font-mono); font-size: 11px; line-height: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--crimson-text); opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; }
+.vl-tech:hover, .vl-tech:focus-visible { color: var(--ink); border-color: var(--crimson); background: var(--surface-raised); }
+.vl-tech:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.vl-tech:hover .vl-tech__name, .vl-tech:focus-visible .vl-tech__name { opacity: 1; transform: translate(-50%, 0); }
+@media (prefers-reduced-motion: reduce) { .vl-tech__name { transition: none; } }
