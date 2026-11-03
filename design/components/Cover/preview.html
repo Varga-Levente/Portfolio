@@ -1,0 +1,50 @@
+<!-- @dsCard height=300 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>VL Crimson</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500&display=swap">
+<style>
+	html, body { margin: 0; height: 100%; }
+	body { background: var(--bg); color: var(--ink); font-family: var(--font-sans); overflow: hidden; }
+	.cover { position: relative; height: 300px; overflow: hidden; }
+	.art { position: absolute; top: 0; left: 480px; width: 480px; height: 300px; overflow: hidden; }
+	.art svg { display: block; width: 480px; height: 300px; }
+	.brand { fill: var(--crimson); }
+	.deep { fill: var(--crimson-deep); }
+	.raised { fill: var(--surface-raised); }
+	.spark { fill: var(--crimson-text); }
+	.glyph { fill: var(--crimson); font-family: var(--font-display); font-size: 300px; }
+	.sq { rx: var(--radius-none); }
+	.dot { rx: var(--radius-full); }
+	.words { position: absolute; left: var(--space-6); bottom: var(--space-6); max-width: 440px; }
+	.name { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: 104px; line-height: .95; text-transform: uppercase; color: var(--ink); }
+	.tag { margin: var(--space-2) 0 0 2px; font-size: 14px; line-height: 20px; color: var(--ink-muted); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 300" width="480" height="300">
+<!--
+	blocks      crimson 160×276 bled off the top (the brand slab, largest) · crimson-deep 176×208 · surface-raised 112×240 bled off the right · crimson-text 16×16 dot once (the eyebrow spark) — about 30% of 960×300
+	arrangement one tall crimson slab with two satellites, bottoms on one line space-6 above the edge, space-4 gutters
+	pattern     oversized display numeral "01", from the README's "numbering only where order is real" and the Anton display face: the project index used as a shape, clipped by the crimson-deep block
+	scales      sides in space-2 multiples; gutters space-4; corners radius-none (a square system); dot radius-full
+-->
+<defs><clipPath id="c"><rect x="192" y="68" width="176" height="208"/></clipPath></defs>
+<rect class="brand sq" x="16" y="-16" width="160" height="292"/>
+<rect class="deep sq" x="192" y="68" width="176" height="208"/>
+<text class="glyph" x="178" y="330" clip-path="url(#c)">01</text>
+<rect class="raised sq" x="384" y="36" width="112" height="240"/>
+<rect class="spark dot" x="384" y="12" width="16" height="16" rx="8"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">VL<br>Crimson</h1>
+<p class="tag">Bold, square, red on black. The design system of varga-levente.com.</p>
+</div>
+</div>
+</body>
+</html>
