@@ -42,7 +42,7 @@ for (const page of site.pages) {
 	fs.writeFileSync(path.join(buildDir, outputFile(page.path)), html);
 }
 
-// The SPA still loads here and redirects unknown routes to "/".
+// The SPA still loads here and shows its 404 page for unknown routes.
 fs.writeFileSync(path.join(buildDir, "404.html"), template);
 
 const today = new Date().toISOString().slice(0, 10);
