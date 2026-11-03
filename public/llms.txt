@@ -1,25 +1,40 @@
 # Levente Varga
 
-> Portfolio of Levente Varga, freelance software developer and entrepreneur from Debrecen, Hungary. IT engineering student at the University of Debrecen. Works mainly with Node.js and React, builds CI/CD pipelines and runs containerized infrastructure with Docker and Podman.
+> Portfolio of Levente Varga, full stack developer and entrepreneur from Debrecen, Hungary. Founder of PandaSoft, Panda3D and Dotrix, and IT engineering student at the University of Debrecen. Builds modern web applications with Node.js and React, plus the CI/CD pipelines and container infrastructure (Docker, Podman, Kubernetes) that keep them secure and stable.
 
-Languages: Java, C#, Python, PHP, JavaScript. Security and stability are top priorities.
+Languages: Java, C#, Python, PHP, JavaScript, TypeScript. Available for freelance work.
 
 ## Pages
 
-- [Home](https://varga-levente.com/): Introduction and social links
-- [About](https://varga-levente.com/about): Background, skills, tech stack, tools and GitHub activity
-- [Projects](https://varga-levente.com/project): Selected projects with source code and demo links
+- [Home](https://varga-levente.com/): Introduction, selected projects, services, experience, work process and contact
+- [About](https://varga-levente.com/about): Background, tech stack, tools and GitHub activity
+- [Projects](https://varga-levente.com/project): All projects with source code and demo links
+
+## Experience
+
+- Founder of PandaSoft, Panda3D and Dotrix (now)
+- IT engineering student, University of Debrecen, Faculty of Informatics (now)
+- .NET developer, R&D, National Instruments (Emerson) (past)
+- PHP backend developer, PQRS Kft. (past)
+
+## Services
+
+- Web development: React, Next.js, TypeScript
+- Backend and APIs: Node.js, Flask
+- DevOps: Docker, Podman, Kubernetes, Nginx
+- Mobile and IoT: Android, Java, ESP32, Raspberry Pi
 
 ## Projects
 
-- [Cinema React/Java Spring App](https://github.com/Varga-Levente/Szoftverfejlesztes-mernokoknek): Movie ticket and snack ordering site with seat selection (React, Java Spring, MySQL)
-- [GTA:V Roleplay Gym Website](https://github.com/Varga-Levente/NFGym-Website): Sales and attendance logging for a roleplay server gym (PHP, MySQL, Bootstrap)
-- [RoBOT Android App](https://github.com/Varga-Levente/RoBOT-Controller-Android-APP): Android app controlling an ESP32 robot over TCP/IP (Android, Java, ESP32)
-- [1-Bit BMP Graph Generator](https://github.com/Varga-Levente/rendszerkozeli-programozas-projekt): C program generating 1-bit BMP graphs with IPC (C, Networking)
-- [Real Time Chat Application](https://github.com/Varga-Levente/Tavkozlohalo-Chat): Chat client, server and Python validation API with file transfer (C#, Python, TCP/IP)
-- [Education Page](https://edu.vlevente.me/): Framework-free PHP site with university course notes
-- [Panda3D](https://panda3d.hu/): 3D printing business: custom prints and prototyping
-- [PandaSoft](https://pandasoft.hu/): Software development business: custom software, web development, IT consulting
+- [PandaSoft](https://pandasoft.hu/): Software development business: custom software, web development and IT consulting
+- [Panda3D](https://panda3d.hu/): 3D printing business: custom prints, prototyping and other 3D printing services
+- [Dotrix](https://dotrix.app/): Discord bot
+- [Cinema app](https://github.com/Varga-Levente/Szoftverfejlesztes-mernokoknek): Movie tickets with seat selection and snack pre-orders (React, Java Spring, MySQL)
+- [RoBOT Android app](https://github.com/Varga-Levente/RoBOT-Controller-Android-APP): Controls an ESP32 robot over TCP/IP (Android, Java, ESP32)
+- [Real-time chat](https://github.com/Varga-Levente/Tavkozlohalo-Chat): Chat client, server and Python validation API with file transfer (C#, Python, TCP/IP)
+- [1-bit BMP graph generator](https://github.com/Varga-Levente/rendszerkozeli-programozas-projekt): C program drawing 1-bit BMP graphs over IPC
+- [GTA V roleplay gym site](https://github.com/Varga-Levente/NFGym-Website): Sales and attendance logging for a roleplay server gym (PHP, MySQL)
+- [Education page](https://edu.vlevente.me/): Framework-free PHP site with university course notes
 
 ## Contact
 
