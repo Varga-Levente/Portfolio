@@ -9,7 +9,6 @@ Languages: Java, C#, Python, PHP, JavaScript. Security and stability are top pri
 - [Home](https://varga-levente.com/): Introduction and social links
 - [About](https://varga-levente.com/about): Background, skills, tech stack, tools and GitHub activity
 - [Projects](https://varga-levente.com/project): Selected projects with source code and demo links
-- [Resume](https://varga-levente.com/resume): Education, experience and skills, downloadable as PDF
 
 ## Projects
 
