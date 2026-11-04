@@ -106,7 +106,7 @@ export const skills = ["C#", "Java", "Python", "PHP", "JavaScript", "TypeScript"
 export const stats = [
 	{ value: "10+", label: ["Projects", "shipped"] },
 	{ value: "19", label: ["Languages &", "technologies"] },
-	{ value: "3", label: ["Own", "ventures"] },
+	{ value: "3", label: ["Brands", "I run"] },
 ];
 
 export const services = [
