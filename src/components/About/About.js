@@ -32,12 +32,12 @@ function About() {
 							<div className="vl-tags">{hobbies.map((h) => <span key={h} className="vl-tag">{h}</span>)}</div>
 						</div>
 					</div>
-					<ol className="vl-timeline">
+					<ol className="vl-timeline vl-timeline--more">
 						{experience.map((item) => (
-							<li key={item.title || item.when} className={item.more ? "vl-tl vl-tl--more" : "vl-tl"}>
+							<li key={item.title} className="vl-tl">
 								<span className="vl-label vl-tl__when">{item.when}</span>
-								{item.title && <h3>{item.title}</h3>}
-								{item.org && <b>{item.org}</b>}
+								<h3>{item.title}</h3>
+								<b>{item.org}</b>
 								<p>{item.text}</p>
 							</li>
 						))}
