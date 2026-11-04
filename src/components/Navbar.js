@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 import ThemeToggle from "./ThemeToggle";
@@ -9,9 +9,22 @@ const navItems = [
 	{ to: "/project", label: "Projects" },
 ];
 
-function NavBar() {
+function NavBar({ onSecret }) {
 	const [open, setOpen] = useState(false);
 	const { pathname } = useLocation();
+	const taps = useRef({ count: 0, timer: null });
+
+	// Five quick clicks on the logo's dot open the hidden game.
+	function tapDot() {
+		const t = taps.current;
+		t.count += 1;
+		clearTimeout(t.timer);
+		t.timer = setTimeout(() => { t.count = 0; }, 1500);
+		if (t.count >= 5) {
+			t.count = 0;
+			onSecret();
+		}
+	}
 
 	useEffect(() => setOpen(false), [pathname]);
 
@@ -25,7 +38,7 @@ function NavBar() {
 	return (
 		<header className="nav">
 			<div className="wrap">
-				<Link className="logo" to="/" aria-label="Levente Varga, home">VL<i>.</i></Link>
+				<Link className="logo" to="/" aria-label="Levente Varga, home">VL<i onClick={tapDot}>.</i></Link>
 				<nav aria-label="Main">
 					<ul className="vl-label">
 						{links.map((link) => <li key={link.key}>{link}</li>)}
